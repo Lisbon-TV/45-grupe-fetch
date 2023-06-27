@@ -1,3 +1,6 @@
+//  ..when array is pasted in js, it will format it automatically.
+//  ..comments in js are not permitted! 
+
 console.log('START');
 
 // function calls for mean of marks!
@@ -16,8 +19,9 @@ const github = 'https://raw.githubusercontent.com/front-end-by-rimantas/45-grupe
 // external location
 const local = 'http://localhost:4512/data/marks.json';        // local - pas mane
 const localError = 'http://localhost:4512/data/random.json';  // random failas don't exist!
+// error message will return result as html! < > are not used in json, unless within the text!
 
-// butinai turi buti try and catch...
+// !!Butinai turi buti try and catch...!!
 
 try {
     const response = await fetch(localError);  // promise pending
@@ -29,7 +33,7 @@ try {
     console.log('Studento vidurkis:', marksAverage);
 } catch (err) {
     console.log('ERROR: kazkas blogai...');   // jei error is caught, cia kodas ir sustos condoleje tik su error message
-    console.warn(err);
+    console.warn(err);   // .warn vs .log -> .warn will color error message yelllow!  
 } finally {
     console.log('Ir cia paskutinis fetch-finally zingsnis...');  // ne visada butinas!
 }
